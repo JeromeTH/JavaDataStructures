@@ -65,4 +65,36 @@ public class Heap<E> {
             parentIndex = (index - 1) / 2;
         }
     }
+
+    public E peek(){
+        if(elements.isEmpty()){
+            return null;
+        }
+        return elements.get(0);
+    }
+
+    public E pop(){
+        E top = elements.get(0);
+        E last = elements.remove(elements.size() - 1);
+        elements.set(0, last);
+        siftDown(0);
+        return last;
+    }
+
+    private void siftDown(int index){
+        int leftChildIndex = index * 2 + 1;
+        int rightChildIndex = index * 2 + 2;
+        int minIdx  = index;
+        if(leftChildIndex < elements.size() && compare(elements.get(index), elements.get(leftChildIndex)) < 0){
+            minIdx = leftChildIndex;
+        }
+        if(rightChildIndex < elements.size() && compare(elements.get(index), elements.get(rightChildIndex)) < 0){
+            minIdx = rightChildIndex;
+        }
+
+        if(minIdx != index){
+            swap(index, minIdx);
+            siftDown(minIdx);
+        }
+    }
 }

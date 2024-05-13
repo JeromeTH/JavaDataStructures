@@ -1,26 +1,27 @@
 package datastructures;
+
 import java.io.Serializable;
 import java.util.*;
 
 import java.util.Comparator;
 
-public class Heap<E> {
+public class MaxHeap<E> {
     private final Comparator<? super E> comparator;
-    private List<E> elements;
+    public final List<E> elements;
     private static final int DEFAULT_INITIAL_CAPACITY = 11;
-    public Heap() {
+    public MaxHeap() {
         this(DEFAULT_INITIAL_CAPACITY, null);
     }
 
-    public Heap(Comparator<? super E> comparator){
+    public MaxHeap(Comparator<? super E> comparator){
         this(DEFAULT_INITIAL_CAPACITY, comparator);
     }
 
-    public Heap(int capacity){
+    public MaxHeap(int capacity){
         this(capacity, null);
     }
 
-    public Heap(int capacity, Comparator<? super E> comparator){
+    public MaxHeap(int capacity, Comparator<? super E> comparator){
         this.comparator = comparator;
         this.elements = new ArrayList<>(capacity);
     }
@@ -42,7 +43,7 @@ public class Heap<E> {
             return comparable.compareTo(e2);
         }
     }
-    // Other methods of the Heap class
+    // Other methods of the MaxHeap class
     private void swap(int i, int j) {
         E temp = elements.get(i);
         elements.set(i, elements.get(j));
@@ -51,7 +52,7 @@ public class Heap<E> {
 
     public void insert(E element) {
         elements.add(element); // Add the new element to the end of the list
-        siftUp(elements.size() - 1); // Restore the heap property
+        siftUp(elements.size() - 1); // Restore the MaxHeap property
     }
 
     private void siftUp(int index) {
@@ -59,7 +60,7 @@ public class Heap<E> {
         int parentIndex = (index - 1) / 2;
 
         // Compare the current element with its parent and swap if necessary
-        while (index > 0 && compare(elements.get(index), elements.get(parentIndex)) < 0) {
+        while (index > 0 && compare(elements.get(index), elements.get(parentIndex)) > 0) {
             swap(index, parentIndex);
             index = parentIndex;
             parentIndex = (index - 1) / 2;
@@ -76,25 +77,35 @@ public class Heap<E> {
     public E pop(){
         E top = elements.get(0);
         E last = elements.remove(elements.size() - 1);
-        elements.set(0, last);
-        siftDown(0);
-        return last;
+        if(!elements.isEmpty()){
+            elements.set(0, last);
+            siftDown(0);
+        }
+        return top;
+    }
+
+    public boolean isEmpty(){
+        return elements.isEmpty();
+    }
+    public int size(){
+        return elements.size();
     }
 
     private void siftDown(int index){
         int leftChildIndex = index * 2 + 1;
         int rightChildIndex = index * 2 + 2;
-        int minIdx  = index;
-        if(leftChildIndex < elements.size() && compare(elements.get(index), elements.get(leftChildIndex)) < 0){
-            minIdx = leftChildIndex;
+        int maxIdx  = index;
+        if(leftChildIndex < elements.size() && compare(elements.get(maxIdx), elements.get(leftChildIndex)) < 0){
+            maxIdx = leftChildIndex;
         }
-        if(rightChildIndex < elements.size() && compare(elements.get(index), elements.get(rightChildIndex)) < 0){
-            minIdx = rightChildIndex;
+        if(rightChildIndex < elements.size() && compare(elements.get(maxIdx), elements.get(rightChildIndex)) < 0){
+            maxIdx = rightChildIndex;
         }
 
-        if(minIdx != index){
-            swap(index, minIdx);
-            siftDown(minIdx);
+        if(maxIdx != index){
+            swap(index, maxIdx);
+            siftDown(maxIdx);
         }
     }
 }
+

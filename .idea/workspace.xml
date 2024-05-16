@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0a01c5a-0f4c-43e4-8082-4f0733bae31f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/datastructures/MaxHeap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/KthLargestElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/TaskScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/problems/UglyNumberII.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/datastructures/BinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/NumberOfAtoms.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/UniqueBST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/problems/ValidateBST.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datastructures/Heap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datastructures/PriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructures/PriorityQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datastructures/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructures/TreeNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,9 +51,22 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.UglyNumberII">
+  <component name="RunManager" selected="Application.NumberOfAtoms">
     <configuration name="KthLargestElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="problems.KthLargestElement" />
+      <module name="JavaDataStructures" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="problems.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NumberOfAtoms" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="problems.NumberOfAtoms" />
       <module name="JavaDataStructures" />
       <extension name="coverage">
         <pattern>
@@ -92,8 +104,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UniqueBST" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="problems.UniqueBST" />
+      <module name="JavaDataStructures" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="problems.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NumberOfAtoms" />
+        <item itemvalue="Application.UniqueBST" />
         <item itemvalue="Application.UglyNumberII" />
         <item itemvalue="Application.KthLargestElement" />
         <item itemvalue="Application.TaskScheduler" />
@@ -109,7 +136,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714741367833</updated>
       <workItem from="1714741368879" duration="23803000" />
-      <workItem from="1715326165307" duration="5449000" />
+      <workItem from="1715326165307" duration="21034000" />
     </task>
     <servers />
   </component>
